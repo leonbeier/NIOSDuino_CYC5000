@@ -1,0 +1,38 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst NIOSDuino_Core.nios2_qsys_0.clock_bridge -pg 1
+preplace inst NIOSDuino_Core.uart_0 -pg 1 -lvl 2 -y 940
+preplace inst NIOSDuino_Core.spi_0 -pg 1 -lvl 2 -y 820
+preplace inst NIOSDuino_Core.pio_0 -pg 1 -lvl 2 -y 240
+preplace inst NIOSDuino_Core.nios2_qsys_0 -pg 1 -lvl 1 -y 90
+preplace inst NIOSDuino_Core.onchip_memory2_0 -pg 1 -lvl 2 -y 440
+preplace inst NIOSDuino_Core.timer_0 -pg 1 -lvl 2 -y 600
+preplace inst NIOSDuino_Core.sdram_controller_0 -pg 1 -lvl 2 -y 1060
+preplace inst NIOSDuino_Core.pwm_0 -pg 1 -lvl 2 -y 700
+preplace inst NIOSDuino_Core.i2c_0 -pg 1 -lvl 2 -y 120
+preplace inst NIOSDuino_Core.sysid_qsys_0 -pg 1 -lvl 2 -y 520
+preplace inst NIOSDuino_Core.pll -pg 1 -lvl 2 -y 1180
+preplace inst NIOSDuino_Core.nios2_qsys_0.cpu -pg 1
+preplace inst NIOSDuino_Core.nios2_qsys_0.reset_bridge -pg 1
+preplace inst NIOSDuino_Core.jtag_uart_0 -pg 1 -lvl 2 -y 340
+preplace inst NIOSDuino_Core.clk_0 -pg 1 -lvl 1 -y 1240
+preplace inst NIOSDuino_Core -pg 1 -lvl 1 -y 40 -regy -20
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)NIOSDuino_Core.pio,(SLAVE)pio_0.external_connection) 1 0 2 NJ 270 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)clk_0.clk_in,(SLAVE)NIOSDuino_Core.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>NIOSDuino_Core</net_container>(MASTER)clk_0.clk,(SLAVE)pll.inclk_interface) 1 1 1 N
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)NIOSDuino_Core.pll_c3_conduit,(SLAVE)pll.c3_conduit) 1 0 2 NJ 1210 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)pwm_0.ext,(SLAVE)NIOSDuino_Core.pwm) 1 0 2 NJ 750 NJ
+preplace netloc INTERCONNECT<net_container>NIOSDuino_Core</net_container>(SLAVE)spi_0.spi_control_port,(SLAVE)timer_0.s1,(SLAVE)sdram_controller_0.s1,(SLAVE)pio_0.s1,(MASTER)nios2_qsys_0.data_master,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)onchip_memory2_0.s1,(MASTER)nios2_qsys_0.instruction_master,(SLAVE)nios2_qsys_0.debug_mem_slave,(SLAVE)uart_0.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)i2c_0.csr,(SLAVE)pll.pll_slave,(SLAVE)pwm_0.avalon_slave_0) 1 0 2 150 50 530
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)pll.c2_conduit,(SLAVE)NIOSDuino_Core.pll_c2_conduit) 1 0 2 NJ 1190 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)NIOSDuino_Core.i2c,(SLAVE)i2c_0.i2c_serial) 1 0 2 NJ 250 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)NIOSDuino_Core.pll_c4_conduit,(SLAVE)pll.c4_conduit) 1 0 2 NJ 1230 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)NIOSDuino_Core.uart,(SLAVE)uart_0.external_connection) 1 0 2 NJ 970 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(MASTER)NIOSDuino_Core.sdram_clk,(MASTER)pll.c1) 1 2 1 N
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)NIOSDuino_Core.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>NIOSDuino_Core</net_container>(SLAVE)pio_0.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)nios2_qsys_0.clk,(SLAVE)i2c_0.clock,(SLAVE)timer_0.clk,(SLAVE)pwm_0.clock,(SLAVE)jtag_uart_0.clk,(SLAVE)sysid_qsys_0.clk,(MASTER)pll.c0,(SLAVE)sdram_controller_0.clk,(SLAVE)uart_0.clk,(SLAVE)spi_0.clk) 1 0 3 130 30 590 1170 820
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)sdram_controller_0.wire,(SLAVE)NIOSDuino_Core.sdram) 1 0 2 NJ 1130 NJ
+preplace netloc EXPORT<net_container>NIOSDuino_Core</net_container>(SLAVE)spi_0.external,(SLAVE)NIOSDuino_Core.spi) 1 0 2 NJ 850 NJ
+preplace netloc INTERCONNECT<net_container>NIOSDuino_Core</net_container>(SLAVE)sdram_controller_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)pwm_0.reset,(SLAVE)spi_0.reset,(SLAVE)nios2_qsys_0.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)pio_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)pll.inclk_interface_reset,(MASTER)nios2_qsys_0.debug_reset_request,(SLAVE)onchip_memory2_0.reset1,(SLAVE)i2c_0.reset_sink,(SLAVE)timer_0.reset,(SLAVE)uart_0.reset) 1 0 2 150 230 510
+preplace netloc FAN_OUT<net_container>NIOSDuino_Core</net_container>(SLAVE)spi_0.irq,(SLAVE)timer_0.irq,(MASTER)nios2_qsys_0.irq,(SLAVE)i2c_0.interrupt_sender,(SLAVE)pwm_0.interrupt_sender,(SLAVE)jtag_uart_0.irq,(SLAVE)uart_0.irq) 1 1 1 550
+levelinfo -pg 1 0 100 930
+levelinfo -hier NIOSDuino_Core 110 270 650 840

@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <File Include="Generated/CYC5000_NIOS.vhd" />
+    <File Include="Generated/NIOSDuino_Processor.vhd" />
+    <File Include="Libraries/NIOSDuino/NIOSDuino_Core.qsys" />
+    <File Include="Libraries/NIOSDuino/NIOSDuino_Core.vhdp" />
+    <File Include="Libraries/NIOSDuino/avalon_pwm.v" />
+    <File Include="Libraries/NIOSDuino/avalon_pwm_hw.tcl" />
+    <File Include="Libraries/NIOSDuino/avalon_pwm_sw.tcl" />
+    <File Include="CYC5000_NIOS.vhdp" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SelectedFpga>CYC5000</SelectedFpga>
+    <IoVoltage>3.3V</IoVoltage>
+  </PropertyGroup>
+</Project>

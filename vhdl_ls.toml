@@ -1,0 +1,12 @@
+# auto-generated
+[Libraries]
+work.files = [
+	'Generated/CYC5000_NIOS.vhd',
+	'Generated/NIOSDuino_Processor.vhd'
+]
+[libraries.work]
+files = [
+	'Generated/CYC5000_NIOS.vhd',
+	'Generated/NIOSDuino_Processor.vhd'
+]
+# auto-generated-end
